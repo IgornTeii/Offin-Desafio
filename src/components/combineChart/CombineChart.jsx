@@ -17,9 +17,10 @@ export default function CombineChart() {
   ];
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow mb-4">
-      <ResponsiveContainer width="100%" height={250}>
-        <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+    <div className="bg-white p-0 rounded-lg shadow-lg ">
+      <h2 className="text-l p-1 font-semibold text-left ml-2">Faturamento x Meta (ano)</h2>
+      <ResponsiveContainer width="100%" height={270}>
+        <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 1 }}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="month" />
           <YAxis />

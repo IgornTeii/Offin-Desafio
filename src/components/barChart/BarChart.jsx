@@ -13,23 +13,25 @@ export default function BarChartComponent() {
   ];
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow mb-4">
-    <ResponsiveContainer width="100%" height={250}>
-      <BarChart
-        data={data}
-        margin={{
-          top: 20, right: 30, left: 20, bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="Categorias" fill="#8884d8" />
-        <Bar dataKey="Meta" fill="#82ca9d" />
-      </BarChart>
-    </ResponsiveContainer>
+    <div className="bg-white rounded-lg shadow-lg mb-4">
+      <h2 className="text-l font-semibold text-left ml-2">Faturamento x Meta (categoria)</h2>
+
+      <ResponsiveContainer width="100%" height={209}>
+        <BarChart
+          data={data}
+          margin={{
+            top: 5, right: 30, left: 20, bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="Categorias" fill="#8884d8" />
+          <Bar dataKey="Meta" fill="#82ca9d" />
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   );
 }

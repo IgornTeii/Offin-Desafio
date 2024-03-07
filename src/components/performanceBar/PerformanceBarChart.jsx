@@ -3,7 +3,7 @@ import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 const CustomTooltip = ({ active, payload, label }) => {
   if (active) {
     return (
-      <div className="bg-white p-2 shadow rounded">
+      <div className="bg-white shadow rounded">
         <p className="label">{`${label} : ${payload[0].value}`}</p>
       </div>
     );
@@ -24,7 +24,9 @@ export default function PerformanceBarChart() {
   ];
 
   return (
-    <ResponsiveContainer width="50%" height={250}>
+    <div className="bg-white  rounded-lg shadow-lg mb-4">
+      <h2 className="text-l font-semibold ">Desempenho por dia da  semana</h2>
+    <ResponsiveContainer width="100%" height={185}>
       <BarChart
         data={data}
         margin={{
@@ -36,5 +38,6 @@ export default function PerformanceBarChart() {
         <Bar dataKey="Desempenho" fill="#4c51bf" radius={[10, 10, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>
+    </div>
   );
 }

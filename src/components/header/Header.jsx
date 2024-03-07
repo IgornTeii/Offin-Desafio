@@ -4,10 +4,19 @@ export default function Header() {
   const valorVendido = 'R$ 145.000,00';
   const eficiencia = '85%';
 
+  const DataCard = ({ title, value }) => {
+    return (
+      <div className="lg:flex-1 text-center bg-white p-2 m-1 rounded-lg shadow">
+        <h2 className="text-lg font-medium text-gray-700">{title}</h2>
+        <p className="mt-1 text-3xl font-semibold text-gray-900">{value}</p>
+      </div>
+    );
+  }
+
   return (
     <header>
-      <div className="max-w-9xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <div className="lg:flex lg:items-center lg:justify-between">
+      <div className="max-w-9xl ml-12 mr-12 px-4 sm:px-6 lg:px-">
+        <div className="lg:flex lg:items-center lg:justify-between p-6">
           <DataCard title="Quantidade Vendida" value={quantidadeVendida} />
           <DataCard title="Meta de faturamento (R$)" value={metaFaturamento} />
           <DataCard title="Valor vendido (R$)" value={valorVendido} />
@@ -18,11 +27,4 @@ export default function Header() {
   );
 }
 
-const DataCard = ({ title, value }) => {
-  return (
-    <div className="lg:flex-1 text-center bg-white p-5 m-2 rounded-lg shadow">
-      <h2 className="text-lg font-medium text-gray-700">{title}</h2>
-      <p className="mt-1 text-3xl font-semibold text-gray-900">{value}</p>
-    </div>
-  );
-}
+
