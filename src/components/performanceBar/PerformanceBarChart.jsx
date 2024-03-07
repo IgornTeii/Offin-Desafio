@@ -1,5 +1,17 @@
 import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active) {
+    return (
+      <div className="bg-white p-2 shadow rounded">
+        <p className="label">{`${label} : ${payload[0].value}`}</p>
+      </div>
+    );
+  }
+
+  return null;
+};
+
 export default function PerformanceBarChart() {
   const data = [
     { name: 'S', Desempenho: 4000 },
@@ -12,17 +24,16 @@ export default function PerformanceBarChart() {
   ];
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="50%" height={250}>
       <BarChart
         data={data}
         margin={{
-          top: 10, right: 0, left: 0, bottom: 0,
+          top: 5, right: 30, left: 20, bottom: 5,
         }}
-        barSize={20}
       >
-        <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
-        <Tooltip />
-        <Bar dataKey="Desempenho" fill="#4c51bf" />
+        <XAxis dataKey="name" axisLine={false} tickLine={false} />
+        <Tooltip content={<CustomTooltip />} />
+        <Bar dataKey="Desempenho" fill="#4c51bf" radius={[10, 10, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>
   );

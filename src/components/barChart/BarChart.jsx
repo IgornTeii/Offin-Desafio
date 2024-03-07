@@ -13,7 +13,8 @@ export default function BarChartComponent() {
   ];
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <div className="bg-white p-6 rounded-lg shadow mb-4">
+    <ResponsiveContainer width="100%" height={250}>
       <BarChart
         data={data}
         margin={{
@@ -29,5 +30,6 @@ export default function BarChartComponent() {
         <Bar dataKey="Meta" fill="#82ca9d" />
       </BarChart>
     </ResponsiveContainer>
+    </div>
   );
 }
