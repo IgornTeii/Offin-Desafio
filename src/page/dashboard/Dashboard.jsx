@@ -7,18 +7,20 @@ export default function Dashboard() {
   return (
     <>
       <Header />
-      <div className="max-w-8xl mr-20 ml-20  sm:px-6 lg:px-8">
-        <div className="grid grid-cols- sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+      <div className="container mx-auto p-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
         </div>
-        <div className="grid grid-cols-5 gap-4">
-          <div className="col-span-4">
+        <div className="grid grid-cols-12 gap-4 mb-4">
+          <div className="col-span-12 lg:col-span-10">
             <BarChartComponent />
           </div>
-          <div className="col-span-1">
+          <div className="col-span-12 lg:col-span-2">
             <PerformanceBarChart />
           </div>
         </div>
-        <CombineChart />
+        <div className="mt-4">
+          <CombineChart />
+        </div>
       </div>
     </>
   );
