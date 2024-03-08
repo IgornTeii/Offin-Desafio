@@ -1,7 +1,7 @@
-import Header from "../components/header/Header";
-import BarChartComponent from "../components/barChart/BarChart";
-import PerformanceBarChart from "../components/performanceBar/PerformanceBarChart";
-import CombineChart from "../components/combineChart/CombineChart";
+import Header from "../../components/header/Header";
+import BarChartComponent from "../../components/barChart/BarChart";
+import PerformanceBarChart from "../../components/performanceBar/PerformanceBarChart";
+import CombineChart from "../../components/combineChart/CombineChart";
 
 export default function Dashboard() {
   return (

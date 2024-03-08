@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function Header() {
   const quantidadeVendida = '12.350';
   const metaFaturamento = 'R$ 170.000,00';
@@ -12,6 +14,12 @@ export default function Header() {
       </div>
     );
   }
+
+  DataCard.propTypes = {
+    title: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+  };
+
 
   return (
     <header>

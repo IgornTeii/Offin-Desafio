@@ -1,7 +1,8 @@
 import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import PropTypes from 'prop-types';
 
 const CustomTooltip = ({ active, payload, label }) => {
-  if (active) {
+  if (active && payload && payload.length) {
     return (
       <div className="bg-white shadow rounded">
         <p className="label">{`${label} : ${payload[0].value}`}</p>
@@ -10,6 +11,15 @@ const CustomTooltip = ({ active, payload, label }) => {
   }
 
   return null;
+};
+
+CustomTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.arrayOf(PropTypes.shape({
+    value: PropTypes.number,
+    name: PropTypes.string,
+  })),
+  label: PropTypes.string,
 };
 
 export default function PerformanceBarChart() {
