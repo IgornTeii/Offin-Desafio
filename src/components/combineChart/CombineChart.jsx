@@ -1,37 +1,68 @@
-import { BarChart, Bar, Line, XAxis, YAxis, Tooltip, Legend, CartesianGrid, ResponsiveContainer } from 'recharts';
 
-export default function App() {
-  const data = [
-    { month: 'Jan', Faturamento: 4000, Meta: 2400 },
-    { month: 'Fev', Faturamento: 3000, Meta: 1398 },
-    { month: 'Mar', Faturamento: 2000, Meta: 2200 },
-    { month: 'Abr', Faturamento: 2780, Meta: 3908 },
-    { month: 'Mai', Faturamento: 1890, Meta: 4800 },
-    { month: 'Jun', Faturamento: 2390, Meta: 3800 },
-    { month: 'Jul', Faturamento: 3490, Meta: 4300 },
-    { month: 'Ago', Faturamento: 3000, Meta: 2400 },
-    { month: 'Set', Faturamento: 2000, Meta: 3000 },
-    { month: 'Out', Faturamento: 2780, Meta: 3908 },
-    { month: 'Nov', Faturamento: 1890, Meta: 4800 },
-    { month: 'Dez', Faturamento: 2000, Meta: 4200 },
-  ];
+import { Bar } from 'react-chartjs-2';
+import 'chart.js/auto';
 
-  console.log('Renderizando o gráfico com os dados:', data);
+const data = {
+  labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+  datasets: [
+    {
+      type: 'line',
+      label: 'Meta (ano)',
+      borderColor: 'rgb(53, 162, 235)',
+      borderWidth: 2,
+      fill: false,
+      data: [20, 30, 50, 40, 60, 70, 60, 80, 75, 90, 100, 110],
+    },
+    {
+      type: 'bar',
+      label: 'Faturamento',
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.5)',
+        'rgba(54, 162, 235, 0.5)',
+        'rgba(255, 206, 86, 0.5)',
+        'rgba(75, 192, 192, 0.5)',
+        'rgba(153, 102, 255, 0.5)',
+        'rgba(255, 159, 64, 0.5)',
+        'rgba(255, 99, 132, 0.5)',
+        'rgba(54, 162, 235, 0.5)',
+        'rgba(255, 206, 86, 0.5)',
+        'rgba(75, 192, 192, 0.5)',
+        'rgba(153, 102, 255, 0.5)',
+        'rgba(255, 159, 64, 0.5)'
+      ],
+      borderColor: 'white',
+      borderWidth: 2,
+      data: [65, 59, 80, 81, 56, 55, 40, 65, 59, 80, 81, 56],
+    }
+  ],
+};
 
+const options = {
+  scales: {
+    y: {
+      beginAtZero: true
+    }
+  },
+  plugins: {
+    legend: {
+      display: true,
+      position: 'top',
+    },
+    title: {
+      display: true,
+      text: 'Faturamento x Meta (ano)',
+    },
+  },
+};
+
+const ChartComponent = () => {
   return (
-    <div className="bg-white rounded-md shadow-md">
-      <h2 className="text-l font-semibold text-left ml-2">Faturamento x Meta (categoria)</h2>
-    <ResponsiveContainer width="100%" height={300}>
-      <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="month" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="Faturamento" fill="#8884d8" />
-        <Line type="monotone" dataKey="Meta" stroke="#82ca9d" />
-      </BarChart>
-    </ResponsiveContainer>
+    <div className="flex justify-center items-center bg-white p-6 rounded-xl shadow-lg h-64"> {/* Exemplo de altura fixa: h-64 */}
+      <div className="w-full h-full">
+        <Bar data={data} options={{...options, maintainAspectRatio: false}} />
+      </div>
     </div>
   );
-}
+};
+
+export default ChartComponent;
