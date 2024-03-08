@@ -20,7 +20,6 @@ export default function Header() {
     value: PropTypes.string.isRequired,
   };
 
-
   return (
     <header>
       <div className="max-w-9xl ml-12 mr-12 px-4 sm:px-6 lg:px-">
@@ -34,5 +33,3 @@ export default function Header() {
     </header>
   );
 }
-
-

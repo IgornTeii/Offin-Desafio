@@ -15,7 +15,6 @@ export default function BarChartComponent() {
   return (
     <div className="bg-white rounded-lg shadow-lg mb-4">
       <h2 className="text-l font-semibold text-left ml-2">Faturamento x Meta (categoria)</h2>
-
       <ResponsiveContainer width="100%" height={209}>
         <BarChart
           data={data}
