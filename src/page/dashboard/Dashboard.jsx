@@ -7,10 +7,10 @@ export default function Dashboard() {
   return (
     <>
       <Header />
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
         </div>
-        <div className="grid grid-cols-12 gap-4 mb-4">
+        <div className="grid grid-cols-12 gap-4">
           <div className="col-span-12 lg:col-span-10">
             <BarChartComponent />
           </div>
@@ -18,7 +18,7 @@ export default function Dashboard() {
             <PerformanceBarChart />
           </div>
         </div>
-        <div className="mt-4">
+        <div>
           <CombineChart />
         </div>
       </div>
