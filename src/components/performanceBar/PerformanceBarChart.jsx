@@ -36,7 +36,7 @@ export default function PerformanceBarChart() {
   return (
     <div className="bg-white  rounded-lg shadow-lg mb-4">
       <h2 className="text-l font-semibold ">Desempenho por dia da  semana</h2>
-    <ResponsiveContainer width="100%" height={185}>
+    <ResponsiveContainer width="100%" height={300}>
       <BarChart
         data={data}
         margin={{

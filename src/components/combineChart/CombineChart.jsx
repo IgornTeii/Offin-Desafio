@@ -57,7 +57,7 @@ const options = {
 
 const ChartComponent = () => {
   return (
-    <div className="flex justify-center items-center bg-white p-6 rounded-xl shadow-lg h-64"> {/* Exemplo de altura fixa: h-64 */}
+    <div className="justify-center items-center bg-white p-6 rounded-xl shadow-lg h-96 overflow-hidden"> 
       <div className="w-full h-full">
         <Bar data={data} options={{...options, maintainAspectRatio: false}} />
       </div>
